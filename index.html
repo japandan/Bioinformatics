@@ -7552,7 +7552,7 @@ Since this is the case, bioinformatics can also be used to refer to the developm
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-Central-Dogma-of-Molecular-Biology:-DNA--%3E-RNA--%3E-PROTEIN">The Central Dogma of Molecular Biology: DNA -&gt; RNA -&gt; PROTEIN<a class="anchor-link" href="#The-Central-Dogma-of-Molecular-Biology:-DNA--%3E-RNA--%3E-PROTEIN">¶</a></h1><p>
+<h2 id="The-Central-Dogma-of-Molecular-Biology:DNA-%3ERNA-%3E-PROTEIN">The Central Dogma of Molecular Biology:DNA-&gt;RNA-&gt; PROTEIN<a class="anchor-link" href="#The-Central-Dogma-of-Molecular-Biology:DNA-%3ERNA-%3E-PROTEIN">¶</a></h2><p>
 DNA is transcribed into RNA, which is then translated into protein. This fundamental process ensures that instructions in the genome are executed to build cellular structures and perform functions.
 <p>
 <img alt="Dogma diagram" src="https://upload.wikimedia.org/wikipedia/commons/6/68/Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg"/>
@@ -7663,7 +7663,27 @@ Valine (Val, V): GUU, GUC, GUA, GUG </code></pre>
 </div>
 </div>
 </div>
-</div></section></section><section><section></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=c92a89f0-0055-4311-824c-75517d44315e">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1aff59ee-4d7e-47ad-b1d3-9c996f932f0b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<code>
+# Example python code to generate condons or kmer
+def generate_trimers():
+    bases = ['A','U','G','C']
+    result = []
+    for base1 in bases:
+        for base2 in bases:
+            for base3 in bases:
+                result.append( base1 + base2 + base3 )
+    return result
+</code>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=c92a89f0-0055-4311-824c-75517d44315e">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -7671,12 +7691,34 @@ Valine (Val, V): GUU, GUC, GUA, GUG </code></pre>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>AAA AAU AAG AAC AUA AUU AUG AUC AGA AGU AGG AGC ACA ACU ACG ACC UAA UAU UAG UAC UUA UUU UUG UUC UGA UGU UGG UGC UCA UCU UCG UCC GAA GAU GAG GAC GUA GUU GUG GUC GGA GGU GGG GGC GCA GCU GCG GCC CAA CAU CAG CAC CUA CUU CUG CUC CGA CGU CGG CGC CCA CCU CCG CCC
+The history saving thread hit an unexpected error (OperationalError('attempt to write a readonly database')).History will not be written to the database.
 </pre>
 </div>
 </div>
 </div>
 </div>
-</div></section></section><section><section></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=cd14f25e-4750-4538-86a0-1ab7a936a7f9">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6cc63b02-3c7c-43ca-8076-6fe130ae7338">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<code>
+# Using recursion, and create kmer of any length 
+def generate_kmers_rec(length):
+    if length == 1:
+        return ['A','U','G','C']
+    else:
+        result = []
+        for seq in generate_kmers_rec( length - 1 ):
+            for base in ['A','U','G','C']:
+                result.append( seq + base )
+        return result
+</code>
+</div>
+</div>
+</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=cd14f25e-4750-4538-86a0-1ab7a936a7f9">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -7695,7 +7737,7 @@ Valine (Val, V): GUU, GUC, GUA, GUG </code></pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Programming-resources-dedicated-to-bioinformatics">Programming resources dedicated to bioinformatics<a class="anchor-link" href="#Programming-resources-dedicated-to-bioinformatics">¶</a></h1><h2 id="Python---Bioconda-channel,-Conda-forge-channel">Python - Bioconda channel, Conda-forge channel<a class="anchor-link" href="#Python---Bioconda-channel,-Conda-forge-channel">¶</a></h2><h2 id="R---Bioconductor">R - Bioconductor<a class="anchor-link" href="#R---Bioconductor">¶</a></h2><h2 id="Kaggle-datasets--https://www.kaggle.com/">Kaggle datasets  <a href="https://www.kaggle.com/">https://www.kaggle.com/</a><a class="anchor-link" href="#Kaggle-datasets--https://www.kaggle.com/">¶</a></h2>
+<h1 id="Programming-resources-dedicated-to-bioinformatics">Programming resources dedicated to bioinformatics<a class="anchor-link" href="#Programming-resources-dedicated-to-bioinformatics">¶</a></h1><h3 id="Python---Bioconda-channel,-Conda-forge-channel">Python - Bioconda channel, Conda-forge channel<a class="anchor-link" href="#Python---Bioconda-channel,-Conda-forge-channel">¶</a></h3><h3 id="R---Bioconductor">R - Bioconductor<a class="anchor-link" href="#R---Bioconductor">¶</a></h3><h3 id="Kaggle-datasets--https://www.kaggle.com/">Kaggle datasets  <a href="https://www.kaggle.com/">https://www.kaggle.com/</a><a class="anchor-link" href="#Kaggle-datasets--https://www.kaggle.com/">¶</a></h3>
 </div>
 </div>
 </div>
@@ -7705,7 +7747,7 @@ Valine (Val, V): GUU, GUC, GUA, GUG </code></pre>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="AI-and-Protein-folding">AI and Protein folding<a class="anchor-link" href="#AI-and-Protein-folding">¶</a></h1><h2 id="Alphafold">Alphafold<a class="anchor-link" href="#Alphafold">¶</a></h2><p>AlphaFold is
+<h1 id="AI-and-Protein-folding-:-Alphafold">AI and Protein folding : Alphafold<a class="anchor-link" href="#AI-and-Protein-folding-:-Alphafold">¶</a></h1><p>AlphaFold is
 a revolutionary artificial intelligence system developed by Google DeepMind that predicts a protein's 3D structure from its 1D amino acid sequence with near-experimental accuracy. By solving the 50-year-old "protein folding problem," AlphaFold has transformed structural biology, accelerating research in drug discovery, disease understanding, and biotechnology.</p>
 </div>
 </div>
