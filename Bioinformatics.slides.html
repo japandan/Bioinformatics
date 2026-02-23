@@ -7618,7 +7618,7 @@ DNA is transcribed into RNA, which is then translated into protein. This fundame
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=48047cf4-2341-434a-850a-8f2f59f67219">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3e578a07">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7627,7 +7627,8 @@ DNA is transcribed into RNA, which is then translated into protein. This fundame
 <li>What amino acid gets created from codon AUA ?</li>
 <li>What amino acid gets created from codon CAG ?</li>
 </ul>
-<p>Standard Amino Acid Codon List (mRNA)</p>
+<p>Stop sequences: UAA,UAG,UGA</p>
+<p>Standard Amino Acid Codon List</p>
 <pre><code>Alanine (Ala, A): GCU, GCC, GCA, GCG
 Arginine (Arg, R): CGU, CGC, CGA, CGG, AGA, AGG
 Asparagine (Asn, N): AAU, AAC
@@ -7651,26 +7652,7 @@ Valine (Val, V): GUU, GUC, GUA, GUG </code></pre>
 </div>
 </div>
 </div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1aff59ee-4d7e-47ad-b1d3-9c996f932f0b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<code>
-# Example python code to generate condons or kmer
-def generate_trimers():
-    bases = ['A','U','G','C']
-    result = []
-    for base1 in bases:
-        for base2 in bases:
-            for base3 in bases:
-                result.append( base1 + base2 + base3 )
-    return result
-</code>
-</div>
-</div>
-</div>
+</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=d8582f74">
 </div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=c92a89f0-0055-4311-824c-75517d44315e">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -7724,12 +7706,50 @@ def generate_kmers_rec(length):
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Programming-resources-dedicated-to-bioinformatics">Programming resources dedicated to bioinformatics<a class="anchor-link" href="#Programming-resources-dedicated-to-bioinformatics">¶</a></h1><h3 id="Python---Bioconda-channel,-Conda-forge-channel">Python - Bioconda channel, Conda-forge channel<a class="anchor-link" href="#Python---Bioconda-channel,-Conda-forge-channel">¶</a></h3><h3 id="R---Bioconductor">R - Bioconductor<a class="anchor-link" href="#R---Bioconductor">¶</a></h3><h3 id="Kaggle-datasets--https://www.kaggle.com/">Kaggle datasets  <a href="https://www.kaggle.com/">https://www.kaggle.com/</a><a class="anchor-link" href="#Kaggle-datasets--https://www.kaggle.com/">¶</a></h3>
+<h1 id="Programming-resources-dedicated-to-Bioinformatics">Programming resources dedicated to Bioinformatics<a class="anchor-link" href="#Programming-resources-dedicated-to-Bioinformatics">¶</a></h1><h3 id="Python---Bioconda-channel,-Conda-forge-channel">Python - Bioconda channel, Conda-forge channel<a class="anchor-link" href="#Python---Bioconda-channel,-Conda-forge-channel">¶</a></h3><h3 id="R---Bioconductor">R - Bioconductor<a class="anchor-link" href="#R---Bioconductor">¶</a></h3><h3 id="Kaggle-datasets--https://www.kaggle.com/">Kaggle datasets  <a href="https://www.kaggle.com/">https://www.kaggle.com/</a><a class="anchor-link" href="#Kaggle-datasets--https://www.kaggle.com/">¶</a></h3>
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=53f85d82">
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=5c897701">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8bcf5521">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<code>
+#1. Setup jupyter for nglview
+#conda install -c conda-forge jupyter_contrib_nbextensions
+#conda install -c conda-forge jupyter_nbextensions_configurator
+#jupyter nbextension enable nglview --py --sys-prefix
+#jupyter nbextension enable widgetsnbextension --py --sys-prefix
+import nglview as nv
+#Downloaded from ncbi
+pdb_file = 'ncbi_dataset/Spike-protein-data/mmdb_9MPW.pdb'
+#2. Load the structure into NGLview
+view = nv.show_structure_file(pdb_file)
+#3. Customize the visualization (optional)
+view.add_representation('cartoon', selection='protein')
+view.add_representation('licorice', selection='ligand and not water')
+view.center()
+#4. Display the interactive viewer
+view
+</code>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8f6e2cfc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Spike Protein Screen capture from nglview</p>
+<p>
+<img alt="Spike Protein 3D" height="600" src="./images/spike.protein.png" width="500"/>
+</p>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=99615249-f7ef-4646-be28-b8d3cf181653">
 <div class="jp-Cell-inputWrapper" tabindex="0">
