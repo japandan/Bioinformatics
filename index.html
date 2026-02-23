@@ -7652,7 +7652,26 @@ Valine (Val, V): GUU, GUC, GUA, GUG </code></pre>
 </div>
 </div>
 </div>
-</div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=d8582f74">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b6fb9a26">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<code>
+# Example python code to generate condons or kmer
+def generate_trimers():
+    bases = ['A','U','G','C']
+    result = []
+    for base1 in bases:
+        for base2 in bases:
+            for base3 in bases:
+                result.append( base1 + base2 + base3 )
+    return result
+</code>
+</div>
+</div>
+</div>
 </div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=c92a89f0-0055-4311-824c-75517d44315e">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
