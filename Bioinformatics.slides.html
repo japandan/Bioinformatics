@@ -7452,7 +7452,7 @@ main {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb8345d5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7478,7 +7478,7 @@ I manage 2 linux server clusters used to process Bioinformatics data.
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1c425795">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5f38b82e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7520,7 +7520,7 @@ Personal Links
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=612fc8a8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=df91c840">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7530,7 +7530,7 @@ Personal Links
 It requires computational and statistical analyses in order to extract meaning from biological data. 
 Since this is the case, bioinformatics can also be used to refer to the development of the software and methods which are used to understand biological data...</p>
 <img alt="Venn Diagram" src="./images/Bioinformatics-Position-400x400.png"/><br/>
-<a href="url">https://www.fiosgenomics.com/what-is-bioinformatics-overview-and-examples/</a>
+<a href="https://www.fiosgenomics.com/what-is-bioinformatics-overview-and-examples/">https://www.fiosgenomics.com/what-is-bioinformatics-overview-and-examples</a>
 </div>
 </div>
 </div>
@@ -7691,26 +7691,30 @@ def generate_kmers_rec(length):
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=78f4566f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c93d751b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<code>
-#1. Setup jupyter for nglview
+<pre>
+1. Setup jupyter for nglview
 #conda install -c conda-forge jupyter_contrib_nbextensions
 #conda install -c conda-forge jupyter_nbextensions_configurator
 #jupyter nbextension enable nglview --py --sys-prefix
 #jupyter nbextension enable widgetsnbextension --py --sys-prefix
 
-<p>import nglview as nv</p>
-<h1 id="Downloaded-from-ncbi">Downloaded from ncbi<a class="anchor-link" href="#Downloaded-from-ncbi">¶</a></h1><pre><code>pdb_file = 'ncbi_dataset/Spike-protein-data/mmdb_9MPW.pdb'</code></pre>
-<h1 id="2.-Load-the-structure-into-NGLview">2. Load the structure into NGLview<a class="anchor-link" href="#2.-Load-the-structure-into-NGLview">¶</a></h1><pre><code>view = nv.show_structure_file(pdb_file)</code></pre>
-<h1 id="3.-Customize-the-visualization-(optional)">3. Customize the visualization (optional)<a class="anchor-link" href="#3.-Customize-the-visualization-(optional)">¶</a></h1><pre><code>view.add_representation('cartoon', selection='protein')
-view.add_representation('licorice', selection='ligand and not water')
-view.center()</code></pre>
-<h1 id="4.-Display-the-interactive-viewer">4. Display the interactive viewer<a class="anchor-link" href="#4.-Display-the-interactive-viewer">¶</a></h1><pre><code>view</code></pre>
-</code>
+import nglview as nv
+    #Downloaded from https://www.ncbi.nlm.nih.gov/
+    pdb_file = 'ncbi_dataset/Spike-protein-data/mmdb_9MPW.pdb'
+2. Load the structure into NGLview
+    view = nv.show_structure_file(pdb_file)
+3. Customize the visualization (optional)
+    view.add_representation('cartoon', selection='protein')
+    view.add_representation('licorice', selection='ligand and not water')
+    view.center()
+4. Display the interactive viewer
+    view
+</pre>
 </div>
 </div>
 </div>
@@ -7887,7 +7891,7 @@ a revolutionary artificial intelligence system developed by Google DeepMind that
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8f948f92">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2a5ce56b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7897,12 +7901,12 @@ a revolutionary artificial intelligence system developed by Google DeepMind that
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=881914f2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=589c6027">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<img alt="Scientist Salaries" src="./jobs/Bioinformatics.scientist.png"/>
+<img alt="Scientist Salaries" height="900" src="./jobs/Bioinformatics.scientist.png" width="700"/>
 </div>
 </div>
 </div>
